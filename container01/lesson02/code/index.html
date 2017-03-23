@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>将CSS引用到面页中的几种方式</title>
+ </head>
+ <body>
+<!--将CSS引用到面页中的几种方式 -->
+
+      <!--01、行内样式-->
+      <div id="div1" style="width:300px; height:300px; text-align:center; line-height:300px;  background:red;">01、行内样式</div>
+
+      <!--02、内嵌式样式-->
+      <style>
+        #div2{height:300px; width:300px;line-height:300px; text-align:center;line-height:300px; background:pink;}
+      </style>
+      <div id="div2">02、内嵌式样式</div>
+
+
+      <!--03、外链式-->
+      <link style="text/css" rel="stylesheet" href="./css/index.css">
+      <div id="oDiv">03、外链式</div>
+
+      <!--04、导入式-->
+      <style>
+        @import "./css/index0.css";
+      </style>
+      <div id="oDiv3">04、导入式</div>
+
+
+<!--将JS引用到面页中的几种方式 -->
+    <style>#oDiv4{height:300px; width:300px;line-height:300px; text-align:center;line-height:300px; background:green;}</style>
+    <style>#oDiv5{height:300px; width:300px;line-height:300px; text-align:center;line-height:300px; background:red;}</style>
+    <style>#oDiv6{height:300px; width:300px;line-height:300px; text-align:center;line-height:300px; background:pink;}</style>
+
+    <!--02.行内引入(不推荐)，安全性能比较低-->
+    <div id="oDiv4" onclick="alert('行内引入(不推荐)，安全性能比较低')" >行内引入(不推荐)，安全性能比较低</div>
+
+    <!--02.内嵌式-->
+    <div id="oDiv5">外链式</div>
+    <script>
+        function getODiv(id){
+          return document.getElementById(id);
+        };
+        var oBtn = getODiv("oDiv5");
+
+        oBtn.onclick = function fn(){
+          alert("勿忘实心，方得始终！");
+        }
+    </script>
+
+
+    <!--03.外链式-->
+    <div id="oDiv6">外链式</div>
+    <script src="./js/index.js"></script>
+
+ </body>
+</html>
